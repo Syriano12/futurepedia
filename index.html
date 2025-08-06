@@ -1,23 +1,454 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ويكي المستقبل</title>
+    <title>Futurepedia | AI-Powered Predictions</title>
+    <meta name="description" content="AI-generated future predictions verified by time and community">
     <style>
-        /* الأنماط ستضاف لاحقًا */
+        :root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --accent: #4cc9f0;
+            --success: #4CAF50;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
         body {
-            font-family: system-ui, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e7ff 100%);
+            color: var(--dark);
+            min-height: 100vh;
             padding: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-            background: #f0f8ff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        header {
+            text-align: center;
+            width: 100%;
+            max-width: 900px;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 20px;
+            color: white;
+            margin: 20px 0 30px;
+            box-shadow: 0 10px 30px rgba(67, 97, 238, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(30deg);
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .subtitle {
+            font-size: 1.4rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 20px;
+            position: relative;
+            z-index: 1;
+            font-weight: 300;
+        }
+        
+        .tagline {
+            background: rgba(255, 255, 255, 0.2);
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            margin-top: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .main-container {
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        }
+        
+        .input-group {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        #topicInput {
+            flex: 1;
+            padding: 18px 25px;
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+        
+        #topicInput:focus {
+            border-color: var(--accent);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(76, 201, 240, 0.3);
+        }
+        
+        #topicInput::placeholder {
+            color: #a0aec0;
+        }
+        
+        .generate-btn {
+            background: linear-gradient(to right, var(--success), #2E7D32);
+            color: white;
+            border: none;
+            padding: 18px 35px;
+            border-radius: 15px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 6px 15px rgba(76, 175, 80, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .generate-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(76, 175, 80, 0.5);
+        }
+        
+        .generate-btn:active {
+            transform: translateY(1px);
+        }
+        
+        .predictions-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .prediction-card {
+            background: linear-gradient(to right, #ffffff, #f9fbff);
+            border-radius: 18px;
+            padding: 25px;
+            border-left: 5px solid var(--accent);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        .prediction-text {
+            font-size: 1.4rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            color: var(--dark);
+            font-weight: 500;
+        }
+        
+        .prediction-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--gray);
+            font-size: 1rem;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        
+        .prediction-topic {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+        }
+        
+        .prediction-date {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .vote-container {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .vote-btn {
+            padding: 12px 25px;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 2px solid transparent;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .vote-up {
+            background: #e8f5e9;
+            color: #2E7D32;
+        }
+        
+        .vote-down {
+            background: #ffebee;
+            color: #c62828;
+        }
+        
+        .vote-up:hover, .vote-down:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .placeholder {
+            text-align: center;
+            padding: 50px 20px;
+            color: var(--gray);
+            font-size: 1.2rem;
+        }
+        
+        .ai-icon {
+            display: inline-block;
+            background: rgba(76, 201, 240, 0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        footer {
+            text-align: center;
+            width: 100%;
+            max-width: 900px;
+            padding: 30px 0;
+            color: var(--gray);
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .input-group {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .generate-btn {
+                justify-content: center;
+            }
+            
+            .prediction-text {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>ويكي المستقبل قريبًا!</h1>
-    <p>جاري البناء...</p>
-    <!-- سنضيف المزيد -->
+    <header>
+        <div class="ai-icon">🤖</div>
+        <h1>Futurepedia</h1>
+        <p class="subtitle">AI-powered predictions about the future, verified by time</p>
+        <div class="tagline">What will tomorrow bring?</div>
+    </header>
+    
+    <div class="main-container">
+        <div class="card">
+            <div class="input-group">
+                <input type="text" id="topicInput" placeholder="Enter a topic (e.g., Artificial Intelligence in 2030)">
+                <button class="generate-btn" onclick="generatePrediction()">
+                    <span>🔮</span> Generate Prediction
+                </button>
+            </div>
+            <p style="color: var(--gray); text-align: center; margin-top: 10px;">
+                Examples: "Renewable energy by 2035", "Space travel in 2040", "AI regulation"
+            </p>
+        </div>
+        
+        <div class="card">
+            <h2 class="section-title">📜 Latest Predictions</h2>
+            <div id="predictionsContainer" class="predictions-container">
+                <div class="placeholder">
+                    <p>No predictions yet. Be the first to generate one!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Futurepedia © 2025 | AI-Powered Future Predictions</p>
+    </footer>
+
+    <script>
+        // Initialize predictions database
+        let predictionsDB = [];
+
+        // Generate prediction function
+        function generatePrediction() {
+            const topicInput = document.getElementById('topicInput');
+            const topic = topicInput.value.trim();
+            
+            if (!topic) {
+                topicInput.focus();
+                return;
+            }
+            
+            // Get current date
+            const now = new Date();
+            const formattedDate = now.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+            
+            // AI-generated responses
+            const aiPredictions = [
+                `By ${getRandomYear(2028, 2040)}, ${topic} will be revolutionized by quantum computing breakthroughs.`,
+                `A major global shift in ${topic} is expected around ${getRandomYear(2026, 2032)}, leading to unprecedented economic opportunities.`,
+                `Experts predict that ${topic} will become a $${getRandomNumber(500, 2000)} billion industry by ${getRandomYear(2030, 2040)}.`,
+                `We'll see the first commercially viable ${topic} applications by ${getRandomYear(2027, 2035)}, changing how we live and work.`,
+                `Regulatory frameworks for ${topic} will be established by ${getRandomYear(2026, 2030)}, creating new market standards.`,
+                `By ${getRandomYear(2030, 2040)}, 70% of ${topic} solutions will be powered by decentralized AI systems.`,
+                `A breakthrough in ${topic} is expected before ${getRandomYear(2028, 2035)}, solving one of humanity's greatest challenges.`
+            ];
+            
+            // Random prediction selection
+            const predictionText = aiPredictions[Math.floor(Math.random() * aiPredictions.length)];
+            
+            // Create prediction object
+            const newPrediction = {
+                id: Date.now(),
+                text: predictionText,
+                topic: topic,
+                timestamp: formattedDate,
+                votes: { up: 0, down: 0 }
+            };
+            
+            // Add to database
+            predictionsDB.push(newPrediction);
+            
+            // Update display
+            displayPredictions();
+            
+            // Clear input
+            topicInput.value = '';
+        }
+        
+        // Display predictions
+        function displayPredictions() {
+            const container = document.getElementById('predictionsContainer');
+            
+            if (predictionsDB.length === 0) {
+                container.innerHTML = '<div class="placeholder"><p>No predictions yet. Be the first to generate one!</p></div>';
+                return;
+            }
+            
+            // Clear container
+            container.innerHTML = '';
+            
+            // Display predictions in reverse chronological order
+            predictionsDB.slice().reverse().forEach(prediction => {
+                const predictionCard = document.createElement('div');
+                predictionCard.className = 'prediction-card';
+                predictionCard.innerHTML = `
+                    <div class="prediction-text">${prediction.text}</div>
+                    <div class="vote-container">
+                        <button class="vote-btn vote-up" onclick="vote(${prediction.id}, 'up')">
+                            <span>👍</span> Accurate (${prediction.votes.up})
+                        </button>
+                        <button class="vote-btn vote-down" onclick="vote(${prediction.id}, 'down')">
+                            <span>👎</span> Inaccurate (${prediction.votes.down})
+                        </button>
+                    </div>
+                    <div class="prediction-meta">
+                        <div class="prediction-topic">
+                            <span>📌</span> ${prediction.topic}
+                        </div>
+                        <div class="prediction-date">
+                            <span>📅</span> ${prediction.timestamp}
+                        </div>
+                    </div>
+                `;
+                container.appendChild(predictionCard);
+            });
+        }
+        
+        // Vote function
+        function vote(id, type) {
+            const prediction = predictionsDB.find(p => p.id === id);
+            if (prediction) {
+                prediction.votes[type]++;
+                displayPredictions();
+            }
+        }
+        
+        // Helper function to get random year
+        function getRandomYear(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        
+        // Helper function to get random number
+        function getRandomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        
+        // Initialize display
+        displayPredictions();
+    </script>
 </body>
 </html>
