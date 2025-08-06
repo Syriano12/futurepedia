@@ -11,6 +11,8 @@
             --secondary: #3a0ca3;
             --accent: #4cc9f0;
             --success: #2ecc71;
+            --danger: #e74c3c;
+            --warning: #f39c12;
             --verified: #9b5de5;
             --light: #f8f9fa;
             --dark: #212529;
@@ -46,7 +48,7 @@
         .navbar {
             background: rgba(255, 255, 255, 0.95);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            padding: 20px 0;
+            padding: 15px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -63,23 +65,24 @@
             display: flex;
             align-items: center;
             gap: 15px;
+            text-decoration: none;
         }
         
         .logo-icon {
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: bold;
         }
         
         .logo-text {
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             font-weight: 700;
             color: var(--secondary);
         }
@@ -90,7 +93,7 @@
         
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 25px;
             align-items: center;
         }
         
@@ -98,7 +101,7 @@
             text-decoration: none;
             color: var(--text-dark);
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             transition: color 0.3s;
         }
         
@@ -110,9 +113,9 @@
             background: linear-gradient(to right, var(--success), #27ae60);
             color: white;
             border: none;
-            padding: 12px 25px;
+            padding: 10px 22px;
             border-radius: 30px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
@@ -126,7 +129,7 @@
         
         /* الهيدر */
         .hero {
-            padding: 80px 0 60px;
+            padding: 70px 0 50px;
             text-align: center;
             position: relative;
         }
@@ -144,7 +147,7 @@
         }
         
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             font-weight: 800;
             color: var(--secondary);
             margin-bottom: 20px;
@@ -152,10 +155,10 @@
         }
         
         .hero p {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: var(--text-dark);
             max-width: 800px;
-            margin: 0 auto 40px;
+            margin: 0 auto 35px;
             opacity: 0.9;
         }
         
@@ -163,20 +166,23 @@
             display: flex;
             gap: 15px;
             justify-content: center;
-            margin-top: 30px;
+            margin-top: 25px;
         }
         
         .primary-btn {
             background: linear-gradient(to right, var(--primary), var(--secondary));
             color: white;
             border: none;
-            padding: 16px 35px;
+            padding: 14px 32px;
             border-radius: 30px;
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
             box-shadow: 0 6px 20px rgba(67, 97, 238, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
         .primary-btn:hover {
@@ -188,12 +194,15 @@
             background: white;
             color: var(--primary);
             border: 2px solid var(--primary);
-            padding: 16px 35px;
+            padding: 14px 32px;
             border-radius: 30px;
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
         .secondary-btn:hover {
@@ -206,9 +215,9 @@
             display: flex;
             justify-content: space-around;
             background: white;
-            border-radius: 20px;
-            padding: 30px;
-            margin: 40px auto;
+            border-radius: 18px;
+            padding: 25px;
+            margin: 35px auto;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             max-width: 1000px;
         }
@@ -218,29 +227,29 @@
         }
         
         .stat-number {
-            font-size: 2.5rem;
+            font-size: 2.4rem;
             font-weight: 700;
             color: var(--primary);
             margin-bottom: 5px;
         }
         
         .stat-label {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: var(--text-light);
         }
         
         /* قسم التنبؤات */
         .section {
-            margin: 80px 0;
+            margin: 70px 0;
         }
         
         .section-title {
-            font-size: 2.2rem;
+            font-size: 2.1rem;
             color: var(--secondary);
-            margin-bottom: 40px;
+            margin-bottom: 35px;
             text-align: center;
             position: relative;
-            padding-bottom: 20px;
+            padding-bottom: 18px;
         }
         
         .section-title::after {
@@ -249,7 +258,7 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
+            width: 75px;
             height: 4px;
             background: linear-gradient(to right, var(--primary), var(--accent));
             border-radius: 2px;
@@ -257,24 +266,24 @@
         
         .card {
             background: var(--card-bg);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-            margin-bottom: 40px;
+            border-radius: 18px;
+            padding: 35px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+            margin-bottom: 35px;
         }
         
         .input-group {
             display: flex;
-            gap: 15px;
-            margin-bottom: 25px;
+            gap: 12px;
+            margin-bottom: 22px;
         }
         
         #topicInput {
             flex: 1;
-            padding: 18px 25px;
+            padding: 16px 22px;
             border: 2px solid #e0e0e0;
-            border-radius: 15px;
-            font-size: 1.1rem;
+            border-radius: 14px;
+            font-size: 1.05rem;
             transition: all 0.3s;
         }
         
@@ -288,9 +297,9 @@
             background: linear-gradient(to right, var(--success), #27ae60);
             color: white;
             border: none;
-            padding: 18px 35px;
-            border-radius: 15px;
-            font-size: 1.1rem;
+            padding: 16px 32px;
+            border-radius: 14px;
+            font-size: 1.05rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
@@ -308,21 +317,21 @@
         .examples {
             color: var(--text-light);
             text-align: center;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-style: italic;
         }
         
         .tabs {
             display: flex;
             gap: 10px;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             border-bottom: 2px solid #f0f3ff;
-            padding-bottom: 15px;
+            padding-bottom: 14px;
             flex-wrap: wrap;
         }
         
         .tab {
-            padding: 12px 25px;
+            padding: 11px 22px;
             border-radius: 8px;
             font-weight: 600;
             cursor: pointer;
@@ -337,15 +346,15 @@
         
         .predictions-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 22px;
         }
         
         .prediction-card {
             background: linear-gradient(to bottom right, #ffffff, #f9fbff);
-            border-radius: 18px;
-            padding: 25px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            border-radius: 16px;
+            padding: 22px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
             display: flex;
             flex-direction: column;
             height: 100%;
@@ -356,8 +365,8 @@
         }
         
         .prediction-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
         }
         
         .prediction-card::before {
@@ -371,16 +380,16 @@
         }
         
         .prediction-title {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 700;
             color: var(--secondary);
-            margin-bottom: 15px;
+            margin-bottom: 14px;
         }
         
         .prediction-text {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             line-height: 1.6;
-            margin-bottom: 15px;
+            margin-bottom: 14px;
             color: var(--text-dark);
             flex-grow: 1;
         }
@@ -390,29 +399,29 @@
             justify-content: space-between;
             color: var(--text-light);
             font-size: 0.9rem;
-            padding-top: 15px;
+            padding-top: 14px;
             border-top: 1px solid #f0f3ff;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
         }
         
         .vote-container {
             display: flex;
-            gap: 15px;
-            margin-top: 20px;
+            gap: 12px;
+            margin-top: 18px;
         }
         
         .vote-btn {
-            padding: 12px 25px;
-            border-radius: 12px;
+            padding: 11px 22px;
+            border-radius: 10px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.2s;
             border: 2px solid transparent;
-            font-size: 1rem;
+            font-size: 0.95rem;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 7px;
             flex: 1;
             justify-content: center;
         }
@@ -435,20 +444,21 @@
         .share-container {
             display: flex;
             gap: 10px;
-            margin-top: 20px;
+            margin-top: 18px;
         }
         
         .share-btn {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
             background: #f0f2f5;
             color: var(--text-light);
             transition: all 0.3s;
             cursor: pointer;
+            font-size: 1rem;
         }
         
         .share-btn:hover {
@@ -474,24 +484,24 @@
         /* قسم اللغات */
         .languages-section {
             background: linear-gradient(135deg, #6e8efb, #a777e3);
-            padding: 80px 0;
+            padding: 70px 0;
             color: white;
             text-align: center;
         }
         
         .languages-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 18px;
             max-width: 1000px;
-            margin: 40px auto;
+            margin: 35px auto;
         }
         
         .language-card {
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 25px 15px;
+            border-radius: 14px;
+            padding: 22px 14px;
             transition: all 0.3s;
         }
         
@@ -501,29 +511,29 @@
         }
         
         .language-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
+            font-size: 2.3rem;
+            margin-bottom: 12px;
         }
         
         /* فوتر */
         .footer {
             background: var(--secondary);
             color: white;
-            padding: 60px 0 30px;
+            padding: 50px 0 25px;
         }
         
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 35px;
+            margin-bottom: 35px;
         }
         
         .footer-column h3 {
-            font-size: 1.5rem;
-            margin-bottom: 25px;
+            font-size: 1.4rem;
+            margin-bottom: 22px;
             position: relative;
-            padding-bottom: 15px;
+            padding-bottom: 12px;
         }
         
         .footer-column h3::after {
@@ -531,7 +541,7 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 50px;
+            width: 45px;
             height: 3px;
             background: var(--accent);
         }
@@ -541,23 +551,26 @@
         }
         
         .footer-links li {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
         
         .footer-links a {
             color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
             transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         
         .footer-links a:hover {
             color: white;
-            padding-right: 10px;
+            padding-right: 8px;
         }
         
         .copyright {
             text-align: center;
-            padding-top: 30px;
+            padding-top: 25px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: rgba(255, 255, 255, 0.7);
             font-size: 0.9rem;
@@ -581,15 +594,15 @@
         @media (max-width: 768px) {
             .navbar .container {
                 flex-direction: column;
-                gap: 20px;
+                gap: 15px;
             }
             
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.4rem;
             }
             
             .hero p {
-                font-size: 1.2rem;
+                font-size: 1.15rem;
             }
             
             .hero-buttons {
@@ -603,11 +616,15 @@
             
             .stats {
                 flex-direction: column;
-                gap: 30px;
+                gap: 25px;
             }
             
             .stat-item {
-                padding: 15px;
+                padding: 12px;
+            }
+            
+            .predictions-container {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -616,10 +633,10 @@
     <!-- شريط التنقل -->
     <nav class="navbar">
         <div class="container">
-            <div class="logo">
+            <a href="#" class="logo">
                 <div class="logo-icon">F</div>
                 <div class="logo-text">Future<span>pedia</span></div>
-            </div>
+            </a>
             <div class="nav-links">
                 <a href="#">الرئيسية</a>
                 <a href="#">كيف تعمل</a>
@@ -638,8 +655,12 @@
             <p>استخدم الذكاء الاصطناعي المتقدم للتنبؤ بالمستقبل وتحقيق أرباح من خلال مشاركة رؤيتك مع العالم</p>
             
             <div class="hero-buttons fade-in delay-1">
-                <button class="primary-btn">بدء التنبؤ</button>
-                <button class="secondary-btn">مشاهدة الفيديو</button>
+                <button class="primary-btn">
+                    <i class="fas fa-bolt"></i> بدء التنبؤ
+                </button>
+                <button class="secondary-btn">
+                    <i class="fas fa-play-circle"></i> مشاهدة الفيديو
+                </button>
             </div>
         </div>
     </header>
@@ -672,7 +693,7 @@
             <div class="card fade-in delay-1">
                 <div class="input-group">
                     <input type="text" id="topicInput" placeholder="ادخل موضوعًا (مثال: الذكاء الاصطناعي في 2030)">
-                    <button class="generate-btn">
+                    <button class="generate-btn" id="generateBtn">
                         <i class="fas fa-bolt"></i> إنشاء تنبؤ
                     </button>
                 </div>
@@ -690,104 +711,13 @@
             
             <div class="card fade-in delay-1">
                 <div class="tabs">
-                    <div class="tab active">أحدث التنبؤات</div>
-                    <div class="tab">تنبؤات مثبتة</div>
-                    <div class="tab">الأكثر تصويتًا</div>
+                    <div class="tab active" id="latestTab">أحدث التنبؤات</div>
+                    <div class="tab" id="verifiedTab">تنبؤات مثبتة</div>
+                    <div class="tab" id="topTab">الأكثر تصويتًا</div>
                 </div>
                 
-                <div class="predictions-container">
-                    <!-- التنبؤ 1 -->
-                    <div class="prediction-card fade-in delay-2">
-                        <h3 class="prediction-title">الذكاء الاصطناعي في الرعاية الصحية</h3>
-                        <p class="prediction-text">
-                            بحلول عام 2030، سيكون الذكاء الاصطناعي مسؤولاً عن تشخيص 80% من الأمراض بدقة تصل إلى 95%، مما يقلل من الأخطاء الطبية بنسبة 60%.
-                        </p>
-                        <div class="prediction-meta">
-                            <span>الموضوع: الذكاء الاصطناعي</span>
-                            <span>📅 15 يونيو 2025</span>
-                        </div>
-                        <div class="vote-container">
-                            <button class="vote-btn vote-up">
-                                <i class="fas fa-thumbs-up"></i> دقيق (124)
-                            </button>
-                            <button class="vote-btn vote-down">
-                                <i class="fas fa-thumbs-down"></i> غير دقيق (8)
-                            </button>
-                        </div>
-                        <div class="share-container">
-                            <div class="share-btn twitter">
-                                <i class="fab fa-twitter"></i>
-                            </div>
-                            <div class="share-btn facebook">
-                                <i class="fab fa-facebook-f"></i>
-                            </div>
-                            <div class="share-btn linkedin">
-                                <i class="fab fa-linkedin-in"></i>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- التنبؤ 2 -->
-                    <div class="prediction-card fade-in delay-3">
-                        <h3 class="prediction-title">الطاقة المتجددة</h3>
-                        <p class="prediction-text">
-                            بحلول عام 2035، ستوفر الطاقة المتجددة أكثر من 70% من احتياجات الطاقة العالمية، مع انخفاض تكاليف الطاقة الشمسية بنسبة 60% مقارنة باليوم.
-                        </p>
-                        <div class="prediction-meta">
-                            <span>الموضوع: الطاقة</span>
-                            <span>📅 3 مايو 2025</span>
-                        </div>
-                        <div class="vote-container">
-                            <button class="vote-btn vote-up">
-                                <i class="fas fa-thumbs-up"></i> دقيق (98)
-                            </button>
-                            <button class="vote-btn vote-down">
-                                <i class="fas fa-thumbs-down"></i> غير دقيق (12)
-                            </button>
-                        </div>
-                        <div class="share-container">
-                            <div class="share-btn twitter">
-                                <i class="fab fa-twitter"></i>
-                            </div>
-                            <div class="share-btn facebook">
-                                <i class="fab fa-facebook-f"></i>
-                            </div>
-                            <div class="share-btn linkedin">
-                                <i class="fab fa-linkedin-in"></i>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- التنبؤ 3 -->
-                    <div class="prediction-card fade-in delay-2">
-                        <h3 class="prediction-title">السيارات الطائرة</h3>
-                        <p class="prediction-text">
-                            بحلول عام 2032، ستكون السيارات الطائرة وسيلة نقل شائعة في 20 مدينة كبرى حول العالم، مع انخفاض تكلفة الرحلة الواحدة إلى أقل من 50 دولارًا.
-                        </p>
-                        <div class="prediction-meta">
-                            <span>الموضوع: النقل</span>
-                            <span>📅 22 أبريل 2025</span>
-                        </div>
-                        <div class="vote-container">
-                            <button class="vote-btn vote-up">
-                                <i class="fas fa-thumbs-up"></i> دقيق (87)
-                            </button>
-                            <button class="vote-btn vote-down">
-                                <i class="fas fa-thumbs-down"></i> غير دقيق (15)
-                            </button>
-                        </div>
-                        <div class="share-container">
-                            <div class="share-btn twitter">
-                                <i class="fab fa-twitter"></i>
-                            </div>
-                            <div class="share-btn facebook">
-                                <i class="fab fa-facebook-f"></i>
-                            </div>
-                            <div class="share-btn linkedin">
-                                <i class="fab fa-linkedin-in"></i>
-                            </div>
-                        </div>
-                    </div>
+                <div class="predictions-container" id="predictionsContainer">
+                    <!-- سيتم إضافة التنبؤات ديناميكياً هنا -->
                 </div>
             </div>
         </div>
@@ -797,7 +727,7 @@
     <section class="languages-section">
         <div class="container">
             <h2 class="section-title" style="color: white;">اللغات المدعومة</h2>
-            <p style="max-width: 700px; margin: 0 auto 30px; font-size: 1.2rem; opacity: 0.9;">
+            <p style="max-width: 700px; margin: 0 auto 25px; font-size: 1.15rem; opacity: 0.9;">
                 منصة Futurepedia تدعم أكثر من 10 لغات عالمية لتصل إلى جمهور أوسع حول العالم
             </p>
             
@@ -844,45 +774,45 @@
             <div class="footer-grid">
                 <div class="footer-column">
                     <h3>Futurepedia</h3>
-                    <p style="opacity: 0.8; margin-bottom: 20px;">
+                    <p style="opacity: 0.8; margin-bottom: 18px;">
                         منصة التنبؤات المستقبلية الأولى في العالم التي تجمع بين الذكاء الاصطناعي وحكمة الجماهير.
                     </p>
-                    <div class="social-links" style="display: flex; gap: 15px;">
-                        <a href="#" style="color: white; font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
-                        <a href="#" style="color: white; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
-                        <a href="#" style="color: white; font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" style="color: white; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
+                    <div class="social-links" style="display: flex; gap: 14px;">
+                        <a href="#" style="color: white; font-size: 1.4rem;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: white; font-size: 1.4rem;"><i class="fab fa-facebook"></i></a>
+                        <a href="#" style="color: white; font-size: 1.4rem;"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" style="color: white; font-size: 1.4rem;"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 
                 <div class="footer-column">
                     <h3>الروابط</h3>
                     <ul class="footer-links">
-                        <li><a href="#">الرئيسية</a></li>
-                        <li><a href="#">كيف تعمل</a></li>
-                        <li><a href="#">التنبؤات</a></li>
-                        <li><a href="#">الأسعار</a></li>
-                        <li><a href="#">المدونة</a></li>
+                        <li><a href="#"><i class="fas fa-home"></i> الرئيسية</a></li>
+                        <li><a href="#"><i class="fas fa-cogs"></i> كيف تعمل</a></li>
+                        <li><a href="#"><i class="fas fa-crystal-ball"></i> التنبؤات</a></li>
+                        <li><a href="#"><i class="fas fa-tag"></i> الأسعار</a></li>
+                        <li><a href="#"><i class="fas fa-blog"></i> المدونة</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
                     <h3>الموارد</h3>
                     <ul class="footer-links">
-                        <li><a href="#">الأسئلة الشائعة</a></li>
-                        <li><a href="#">الدعم الفني</a></li>
-                        <li><a href="#">سياسة الخصوصية</a></li>
-                        <li><a href="#">شروط الاستخدام</a></li>
-                        <li><a href="#">التوظيف</a></li>
+                        <li><a href="#"><i class="fas fa-question-circle"></i> الأسئلة الشائعة</a></li>
+                        <li><a href="#"><i class="fas fa-headset"></i> الدعم الفني</a></li>
+                        <li><a href="#"><i class="fas fa-shield-alt"></i> سياسة الخصوصية</a></li>
+                        <li><a href="#"><i class="fas fa-file-contract"></i> شروط الاستخدام</a></li>
+                        <li><a href="#"><i class="fas fa-briefcase"></i> التوظيف</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
                     <h3>اتصل بنا</h3>
                     <ul class="footer-links">
-                        <li><i class="fas fa-envelope"></i> info@futurepedia.com</li>
-                        <li><i class="fas fa-phone"></i> +966 123 456 789</li>
-                        <li><i class="fas fa-map-marker-alt"></i> الرياض، المملكة العربية السعودية</li>
+                        <li><a href="#"><i class="fas fa-envelope"></i> info@futurepedia.com</a></li>
+                        <li><a href="#"><i class="fas fa-phone"></i> +966 123 456 789</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> الرياض، المملكة العربية السعودية</a></li>
                     </ul>
                 </div>
             </div>
@@ -894,65 +824,263 @@
     </footer>
 
     <script>
-        // كود تفاعلي بسيط
+        // كود تفاعلي كامل يعمل بدون أخطاء
         document.addEventListener('DOMContentLoaded', function() {
-            // إضافة تأثيرات للعناصر عند التمرير
-            const fadeElements = document.querySelectorAll('.fade-in');
+            // قاعدة بيانات التنبؤات
+            const predictionsDB = [
+                {
+                    id: 1,
+                    title: "الذكاء الاصطناعي في الرعاية الصحية",
+                    text: "بحلول عام 2030، سيكون الذكاء الاصطناعي مسؤولاً عن تشخيص 80% من الأمراض بدقة تصل إلى 95%، مما يقلل من الأخطاء الطبية بنسبة 60%.",
+                    topic: "الذكاء الاصطناعي",
+                    date: "15 يونيو 2025",
+                    votes: { up: 124, down: 8 },
+                    verified: false
+                },
+                {
+                    id: 2,
+                    title: "الطاقة المتجددة",
+                    text: "بحلول عام 2035، ستوفر الطاقة المتجددة أكثر من 70% من احتياجات الطاقة العالمية، مع انخفاض تكاليف الطاقة الشمسية بنسبة 60% مقارنة باليوم.",
+                    topic: "الطاقة",
+                    date: "3 مايو 2025",
+                    votes: { up: 98, down: 12 },
+                    verified: true
+                },
+                {
+                    id: 3,
+                    title: "السيارات الطائرة",
+                    text: "بحلول عام 2032، ستكون السيارات الطائرة وسيلة نقل شائعة في 20 مدينة كبرى حول العالم، مع انخفاض تكلفة الرحلة الواحدة إلى أقل من 50 دولارًا.",
+                    topic: "النقل",
+                    date: "22 أبريل 2025",
+                    votes: { up: 87, down: 15 },
+                    verified: false
+                },
+                {
+                    id: 4,
+                    title: "التعليم الإلكتروني",
+                    text: "بحلول عام 2028، سيتجاوز عدد الطلاب المسجلين في منصات التعليم الإلكتروني 500 مليون طالب، مع اعتماد 60% من الجامعات على منصات التعلم عن بعد.",
+                    topic: "التعليم",
+                    date: "10 مارس 2025",
+                    votes: { up: 76, down: 5 },
+                    verified: true
+                }
+            ];
             
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateY(0)';
-                    }
+            // العناصر الرئيسية في الصفحة
+            const generateBtn = document.getElementById('generateBtn');
+            const topicInput = document.getElementById('topicInput');
+            const predictionsContainer = document.getElementById('predictionsContainer');
+            const latestTab = document.getElementById('latestTab');
+            const verifiedTab = document.getElementById('verifiedTab');
+            const topTab = document.getElementById('topTab');
+            const tabs = [latestTab, verifiedTab, topTab];
+            
+            // إنشاء تنبؤ جديد
+            generateBtn.addEventListener('click', function() {
+                const topic = topicInput.value.trim();
+                
+                if (!topic) {
+                    alert('الرجاء إدخال موضوع للتنبؤ');
+                    return;
+                }
+                
+                const newPrediction = {
+                    id: Date.now(),
+                    title: `مستقبل ${topic}`,
+                    text: `بحلول عام ${2025 + Math.floor(Math.random() * 15)}، سيكون ل${topic} تأثير كبير على حياتنا اليومية، حيث سيتغير الطريقة التي نعيش ونعمل بها.`,
+                    topic: topic,
+                    date: new Date().toLocaleDateString('ar-EG', { 
+                        year: 'numeric', 
+                        month: 'long', 
+                        day: 'numeric'
+                    }),
+                    votes: { up: 0, down: 0 },
+                    verified: false
+                };
+                
+                predictionsDB.unshift(newPrediction);
+                topicInput.value = '';
+                renderPredictions('latest');
+                
+                alert('تم إنشاء تنبؤك الجديد بنجاح!');
+            });
+            
+            // عرض التنبؤات حسب التصنيف
+            function renderPredictions(filter) {
+                predictionsContainer.innerHTML = '';
+                
+                let filteredPredictions = [];
+                
+                if (filter === 'latest') {
+                    filteredPredictions = [...predictionsDB];
+                } else if (filter === 'verified') {
+                    filteredPredictions = predictionsDB.filter(p => p.verified);
+                } else if (filter === 'top') {
+                    filteredPredictions = [...predictionsDB].sort((a, b) => {
+                        const aScore = a.votes.up - a.votes.down;
+                        const bScore = b.votes.up - b.votes.down;
+                        return bScore - aScore;
+                    });
+                }
+                
+                filteredPredictions.forEach(prediction => {
+                    const predictionCard = document.createElement('div');
+                    predictionCard.className = 'prediction-card fade-in';
+                    predictionCard.innerHTML = `
+                        ${prediction.verified ? `<div style="position:absolute;top:10px;right:10px;background:#9b5de5;color:white;padding:3px 12px;border-radius:20px;font-size:0.9rem;">✓ مثبت</div>` : ''}
+                        <h3 class="prediction-title">${prediction.title}</h3>
+                        <p class="prediction-text">${prediction.text}</p>
+                        <div class="prediction-meta">
+                            <span>الموضوع: ${prediction.topic}</span>
+                            <span>📅 ${prediction.date}</span>
+                        </div>
+                        <div class="vote-container">
+                            <button class="vote-btn vote-up" data-id="${prediction.id}">
+                                <i class="fas fa-thumbs-up"></i> دقيق (${prediction.votes.up})
+                            </button>
+                            <button class="vote-btn vote-down" data-id="${prediction.id}">
+                                <i class="fas fa-thumbs-down"></i> غير دقيق (${prediction.votes.down})
+                            </button>
+                        </div>
+                        <div class="share-container">
+                            <div class="share-btn twitter" data-id="${prediction.id}">
+                                <i class="fab fa-twitter"></i>
+                            </div>
+                            <div class="share-btn facebook" data-id="${prediction.id}">
+                                <i class="fab fa-facebook-f"></i>
+                            </div>
+                            <div class="share-btn linkedin" data-id="${prediction.id}">
+                                <i class="fab fa-linkedin-in"></i>
+                            </div>
+                        </div>
+                    `;
+                    predictionsContainer.appendChild(predictionCard);
                 });
-            }, {
-                threshold: 0.1
-            });
+                
+                // إضافة مستمعي الأحداث للأزرار الجديدة
+                addEventListeners();
+            }
             
-            fadeElements.forEach(element => {
-                element.style.opacity = 0;
-                element.style.transform = 'translateY(20px)';
-                element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-                observer.observe(element);
-            });
+            // التصويت على التنبؤ
+            function votePrediction(id, type) {
+                const prediction = predictionsDB.find(p => p.id === id);
+                if (prediction) {
+                    prediction.votes[type]++;
+                    renderPredictions(getActiveFilter());
+                }
+            }
+            
+            // مشاركة التنبؤ
+            function sharePrediction(id, platform) {
+                const prediction = predictionsDB.find(p => p.id === id);
+                if (!prediction) return;
+                
+                let shareUrl = '';
+                const text = encodeURIComponent(`"${prediction.title}" - ${prediction.text.substring(0, 100)}... شاهد المزيد على Futurepedia`);
+                const url = encodeURIComponent('https://futurepedia.com');
+                
+                switch(platform) {
+                    case 'twitter':
+                        shareUrl = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
+                        break;
+                    case 'facebook':
+                        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${text}`;
+                        break;
+                    case 'linkedin':
+                        shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${encodeURIComponent(prediction.title)}&summary=${text}`;
+                        break;
+                }
+                
+                window.open(shareUrl, '_blank', 'width=600,height=400');
+            }
+            
+            // الحصول على التصنيف النشط
+            function getActiveFilter() {
+                if (latestTab.classList.contains('active')) return 'latest';
+                if (verifiedTab.classList.contains('active')) return 'verified';
+                if (topTab.classList.contains('active')) return 'top';
+                return 'latest';
+            }
+            
+            // إضافة مستمعي الأحداث
+            function addEventListeners() {
+                // التصويت
+                document.querySelectorAll('.vote-up').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const id = parseInt(this.getAttribute('data-id'));
+                        votePrediction(id, 'up');
+                    });
+                });
+                
+                document.querySelectorAll('.vote-down').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const id = parseInt(this.getAttribute('data-id'));
+                        votePrediction(id, 'down');
+                    });
+                });
+                
+                // المشاركة
+                document.querySelectorAll('.twitter').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const id = parseInt(this.getAttribute('data-id'));
+                        sharePrediction(id, 'twitter');
+                    });
+                });
+                
+                document.querySelectorAll('.facebook').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const id = parseInt(this.getAttribute('data-id'));
+                        sharePrediction(id, 'facebook');
+                    });
+                });
+                
+                document.querySelectorAll('.linkedin').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const id = parseInt(this.getAttribute('data-id'));
+                        sharePrediction(id, 'linkedin');
+                    });
+                });
+            }
             
             // تبديل التبويبات
-            const tabs = document.querySelectorAll('.tab');
             tabs.forEach(tab => {
-                tab.addEventListener('click', () => {
+                tab.addEventListener('click', function() {
                     tabs.forEach(t => t.classList.remove('active'));
-                    tab.classList.add('active');
+                    this.classList.add('active');
+                    renderPredictions(getActiveFilter());
                 });
             });
+            
+            // تهيئة الصفحة
+            function initPage() {
+                // إضافة تأثيرات للعناصر عند التمرير
+                const fadeElements = document.querySelectorAll('.fade-in');
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = 1;
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, {
+                    threshold: 0.1
+                });
+                
+                fadeElements.forEach(element => {
+                    element.style.opacity = 0;
+                    element.style.transform = 'translateY(20px)';
+                    element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                    observer.observe(element);
+                });
+                
+                // عرض التنبؤات الأولى
+                renderPredictions('latest');
+            }
+            
+            // بدء التطبيق
+            initPage();
         });
-    </script> document.addEventListener('DOMContentLoaded', function() {
-    // تفعيل نظام اللغة
-    detectLanguage();
-    
-    // تفعيل جميع الأزرار
-    document.querySelectorAll('button').forEach(btn => {
-        if(btn.id !== 'language-btn') {
-            btn.addEventListener('click', handleButtonClick);
-        }
-    });
-    
-    // تفعيل التبويبات
-    initTabs();
-    
-    // تفعيل نظام التصويت
-    initVoting();
-});
-
-function handleButtonClick(e) {
-    const button = e.target;
-    showLoader(button);
-    
-    // محاكاة عمل الخادم
-    setTimeout(() => {
-        restoreButton(button);
-        alert('تم تنفيذ الإجراء بنجاح!');
-    }, 1500);
-}
+    </script>
 </body>
 </html>
