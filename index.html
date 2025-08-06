@@ -926,6 +926,34 @@
                 });
             });
         });
-    </script>
+    </script>// مثال متكامل للتهيئة
+document.addEventListener('DOMContentLoaded', function() {
+    // تفعيل نظام اللغة
+    detectLanguage();
+    
+    // تفعيل جميع الأزرار
+    document.querySelectorAll('button').forEach(btn => {
+        if(btn.id !== 'language-btn') {
+            btn.addEventListener('click', handleButtonClick);
+        }
+    });
+    
+    // تفعيل التبويبات
+    initTabs();
+    
+    // تفعيل نظام التصويت
+    initVoting();
+});
+
+function handleButtonClick(e) {
+    const button = e.target;
+    showLoader(button);
+    
+    // محاكاة عمل الخادم
+    setTimeout(() => {
+        restoreButton(button);
+        alert('تم تنفيذ الإجراء بنجاح!');
+    }, 1500);
+}
 </body>
 </html>
